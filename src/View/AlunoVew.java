@@ -1,4 +1,4 @@
-package Vew;
+package View;
 
 import java.util.Locale;
 import Model.Aluno;
