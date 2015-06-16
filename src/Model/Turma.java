@@ -13,6 +13,5 @@ public class Turma {
 
     public void setIdTurma(String idTurma) {
         this.idTurma = idTurma;
-    }
-    
+    }    
 }

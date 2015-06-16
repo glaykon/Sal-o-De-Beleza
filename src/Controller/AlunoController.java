@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import Config.Utilidade;
 
         
 
@@ -17,13 +18,13 @@ public class AlunoController {
             Utilidade util = new Utilidade(); 
             Connection conexao = util.conecta();
              
-            String sql = "INSERT INTO alunos (nome, endereco, cpf, telefone, matricula) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO alunos (nome, endereco, cpf, telefone, matricula) VALUES (?, ?, ?, ?, ?)";
         	PreparedStatement statement = conexao.prepareStatement(sql);// note que agora criamos um Statement de forma diferente
 			statement.setString(1, a.getNome());
 			statement.setString(2, a.getEndereco());
-			statement.setInt(3, a.getCpf());
-			statement.setInt(4, a.getTelefone());
-			statement.setInt(5, a.getMatricula());
+			statement.setString(3, a.getCpf());
+			statement.setString(4, a.getTelefone());
+			statement.setString(5, a.getMatricula());
 			
 			 
 			int rowsInserted = statement.executeUpdate(); // Executa a inserção e retorna valor != 0 se inseriu (ID de inserção do banco)
@@ -50,9 +51,9 @@ public void selectPessoa()throws SQLException {
                   
                     String nome = result.getString("nome");
                     String endereco = result.getString("endereco");
-                    int cpf = result.getInt("cpf");
-                    int  telefone = result.getInt("telefone");
-                    int  matricula = result.getInt("matricula");
+                    String cpf = result.getString("cpf");
+                    String  telefone = result.getString("telefone");
+                    String  matricula = result.getString("matricula");
                  
                   
                     

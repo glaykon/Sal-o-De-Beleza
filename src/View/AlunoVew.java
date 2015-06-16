@@ -35,6 +35,7 @@ public class AlunoVew extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("CADASTRO DE ALUNOS");
 
         jLabel2.setText(" NOME");
@@ -46,6 +47,12 @@ public class AlunoVew extends javax.swing.JFrame {
         jLabel5.setText("TELEFONE");
 
         jLabel6.setText("MATRICULA");
+
+        cpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpfActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("SAIR");
 
@@ -90,7 +97,7 @@ public class AlunoVew extends javax.swing.JFrame {
                                     .addComponent(telefone, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 132, Short.MAX_VALUE)
+                        .addGap(0, 113, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(144, 144, 144))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -135,7 +142,7 @@ public class AlunoVew extends javax.swing.JFrame {
     private void lblCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblCadastroActionPerformed
         try {
             //contruir o objeto Aluno - MODEL
-           Aluno a= new Aluno( nome.getText(), enderco.getText(),Integer.parseInt(cpf.getText()) ,Integer.parseInt(telefone.getText()) , Integer.parseInt(matricula.getText()));
+           Aluno a= new Aluno( nome.getText(), enderco.getText(),(cpf.getText()) ,(telefone.getText()) , (matricula.getText()));
                    
            // chamar controller para salvar o aluno 'a' no banco - CONTROLLEr
           AlunoController c= new AlunoController();
@@ -145,6 +152,10 @@ public class AlunoVew extends javax.swing.JFrame {
         }
       
     }//GEN-LAST:event_lblCadastroActionPerformed
+
+    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpfActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -3,17 +3,18 @@ package Model;
 public class Aluno {
     
     
-     String nome,endereco,genero;
-     int telefone, cpf,matricula;
+     String nome,endereco,telefone, cpf,matricula;
+    private String genero;
+     
    
 
 
- public Aluno(String nome, String endereco, int matricula, int telefone, int cpf) {
+ public Aluno(String nome, String endereco, String cpf, String telefone,String matricula) {
         this.nome = nome;
-        this.endereco = endereco;
-        this.matricula = matricula;
-        this.telefone = telefone;
+        this.endereco = endereco;      
         this.cpf = cpf;
+         this.telefone = telefone;
+        this.matricula = matricula;
     }
 
     public String getnome() {
@@ -48,35 +49,27 @@ public class Aluno {
         this.endereco = endereco;
     }
 
-    public int getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public int getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
-    }
-
-    public int getCpf() {
+         public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String  matricula) {
+        this.matricula = matricula;
     }
 }
