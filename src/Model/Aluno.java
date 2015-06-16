@@ -6,10 +6,7 @@ public class Aluno {
      String nome,endereco,telefone, cpf,matricula;
     private String genero;
      
-   
-
-
- public Aluno(String nome, String endereco, String cpf, String telefone,String matricula) {
+public Aluno(String nome, String endereco, String cpf, String telefone,String matricula) {
         this.nome = nome;
         this.endereco = endereco;      
         this.cpf = cpf;

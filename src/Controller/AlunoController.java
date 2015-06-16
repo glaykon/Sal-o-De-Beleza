@@ -1,14 +1,12 @@
 package Controller;
 
+import Config.Utilidade;
 import Model.Aluno;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import Config.Utilidade;
-
-        
 
 public class AlunoController {
           @SuppressWarnings("ConvertToTryWithResources")
@@ -39,7 +37,7 @@ public class AlunoController {
         }
     } 
 
-public void selectPessoa()throws SQLException {
+    public void selectPessoa()throws SQLException {
         try {
             String sql = "SELECT * FROM pessoa";
              Utilidade util= new Utilidade(); //inicializa classe Utilidade
@@ -47,19 +45,13 @@ public void selectPessoa()throws SQLException {
             ResultSet result = statement.executeQuery(sql);
             int count = 0;
             while (result.next()){
-                    
-                  
+                   
                     String nome = result.getString("nome");
                     String endereco = result.getString("endereco");
                     String cpf = result.getString("cpf");
                     String  telefone = result.getString("telefone");
                     String  matricula = result.getString("matricula");
-                 
-                  
-                    
-                   
-                    
-                    
+                     
                     String output = "Pessoa #%d: %s - %s - %s - %s - %s - %s";
                     System.out.println(String.format(output, ++count, nome, endereco, cpf, telefone,  matricula));                               
             }
@@ -67,9 +59,4 @@ public void selectPessoa()throws SQLException {
         } catch (SQLException e) {
       } 
     }
-    
 }
-
- 
-
-   
