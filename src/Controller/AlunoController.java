@@ -16,14 +16,20 @@ public class AlunoController {
             Utilidade util = new Utilidade(); 
             Connection conexao = util.conecta();
              
-            String sql = "INSERT INTO alunos (nome, endereco, cpf, telefone, matricula) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO alunos (Nome,Nascimento, Mes,Ano, Sexo, Telefone, Celular, Cpf, RG, Email, Endereço,Obs) VALUES (?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?)";
         	PreparedStatement statement = conexao.prepareStatement(sql);// note que agora criamos um Statement de forma diferente
 			statement.setString(1, a.getNome());
-			statement.setString(2, a.getEndereco());
-			statement.setString(3, a.getCpf());
-			statement.setString(4, a.getTelefone());
-			statement.setString(5, a.getMatricula());
-			
+			statement.setString(2, a.getNascimento());
+			statement.setString(3, a.getMes());
+                        statement.setString(4, a.getAno());
+			statement.setString(5, a.getSexo());
+			statement.setString(6, a.getTelefone());
+                        statement.setString(7, a.getCelular());
+                        statement.setString(8, a.getCpf());
+                        statement.setString(9, a.getRG());
+                        statement.setString(10, a.getEmail());
+                        statement.setString(11, a.getEndereço());
+			statement.setString(12, a.getObs());
 			 
 			int rowsInserted = statement.executeUpdate(); // Executa a inserção e retorna valor != 0 se inseriu (ID de inserção do banco)
 			if (rowsInserted > 0) {
@@ -46,14 +52,21 @@ public class AlunoController {
             int count = 0;
             while (result.next()){
                    
-                    String nome = result.getString("nome");
-                    String endereco = result.getString("endereco");
-                    String cpf = result.getString("cpf");
-                    String  telefone = result.getString("telefone");
-                    String  matricula = result.getString("matricula");
+                    String Nome = result.getString("Nome");
+                    String Nascimento = result.getString("Nascimento");
+                    String Mes = result.getString("Mes");
+                    String  Ano = result.getString("Ano");
+                    String  Sexo = result.getString("Sexo");
+                    String  Telefone = result.getString("Telefone");
+                    String  Celular = result.getString("Celular");
+                    String  Cpf = result.getString("Cpf");
+                    String  RG = result.getString("RG");
+                    String  Email = result.getString("Email");
+                    String  Endereço = result.getString("Endereço");
+                    String  Obs = result.getString("Obs");
                      
                     String output = "Pessoa #%d: %s - %s - %s - %s - %s - %s";
-                    System.out.println(String.format(output, ++count, nome, endereco, cpf, telefone,  matricula));                               
+                    System.out.println(String.format(output, ++count,Nome, Nascimento, Mes,Ano, Sexo, Telefone, Celular, Cpf, RG, Email, Endereço,Obs));                               
             }
         }
         } catch (SQLException e) {
